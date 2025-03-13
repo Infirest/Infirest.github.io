@@ -1,0 +1,68 @@
+body > header {
+    font-size: large;
+    font-weight: bold;
+}
+
+article > header {
+    font-size: medium; 
+    font-weight: bold;
+}
+
+article header:hover{
+    color: green;
+    font-size: large;
+}
+
+article > p {
+    font-size: small;
+    font-style: italic;
+}
+
+tieu_de_phu {
+    font-style: italic;
+    font-weight: bold;
+}
+body {
+    background: rgb(86, 241, 51);
+    margin: 0;
+ padding: 0;
+ background: #ccc;
+ font-family: '';
+
+}
+
+nav {
+    text-align: center;
+    background: rgb(99, 86, 86);
+    font-family: ';
+}
+
+nav > ul > li {
+    display: inline;
+    padding: 20px;
+    font-size: 24px;
+ 
+    line-height: 40px;
+    height: 40px;
+    display: inline-block;
+    padding: 30px;
+}
+nav > ul {
+    list-style: none;
+    background-color: #444;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav > ul > li > a {
+    color: white;
+    text-decoration: none;
+}
+
+nav  ul li a:hover{
+    color: red;
+    text-decoration: underline;
+
+}
+
