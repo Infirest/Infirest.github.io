@@ -1,0 +1,16 @@
+p#first {
+    color:brown;
+    font-size: medium;
+}
+.special {
+    color: blue;
+    font-size: small;
+}
+div #second {
+    color: green;
+    font-size: large;
+}
+div p.special {
+    color: red;
+    font-size: x-large;
+}
