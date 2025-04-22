@@ -14,7 +14,7 @@
 .ProductPrice {
     font-style: italic;
 }
-.ProductPrice:before {
+.ProductPrice::before {
     content: "$";
 }
 .Product {
