@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Multiplication Table</title>
+    <script>
+        function display() {
+            var a = document.f.a; // Get the input field
+            var iframe = document.getElementById("view-area"); // Get the iframe element
+            var iframeDoc = iframe.contentDocument || iframe.contentWindow.document; // Get the iframe document
+
+            // Clear old content
+            iframeDoc.body.innerHTML = "";
+
+            if (a.value.trim() === "" || isNaN(a.value)) {
+                iframeDoc.body.innerHTML = "<font color='red'>You must enter a valid number</font>";
+            } else {
+                var tableContent = "<b>Multiplication Table for " + a.value + ":</b><br/>";
+                for (var i = 1; i <= 10; i++) {
+                    tableContent += a.value + " x " + i + " = " + (i * a.value) + "<br/>";
+                }
+                iframeDoc.body.innerHTML = tableContent; // Update iframe content
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="f">
+        <table border="0" align="center">
+            <tr>
+                <td colspan="2" align="center">
+                    <h2>MULTIPLICATION TABLE</h2>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Which multiplication table do you want to display?</td>
+                <td>
+                    <input name="a" size="5" onchange="display()" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <iframe id="view-area" width="230" height="250"></iframe>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
