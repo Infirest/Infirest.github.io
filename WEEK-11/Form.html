@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register New Account</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+
     <script>
         function formvalid() {
             const f = document.frmRegister;
@@ -68,131 +67,82 @@
     </script>
 </head>
 <body>
-    <div class="container mt-4">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header text-black text-center">
-                        REGISTER NEW ACCOUNT 
-                    </div>
-                    <div class="card-body">
-                        <form name="frmRegister" method="get" onsubmit="return formvalid();">
-                            <div class="mb-3 row">
-                                <label for="txtUsername" class="col-sm-4 col-form-label text-end">Username</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="txtUsername" name="txtUsername">
-                                </div>
-                            </div>
+    <form name = "frmRegister" method="get" onsubmit="return formvalid();">
+    <div class="container mt-5">
+            <h2 class="card-header text-center"  style="background-color: lightblue; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">REGISTER NEW ACCOUNT</h2>
+        
+        <div class="form-group">
+            <label> Username</label>
+            <input type="text" name="txtUsername"class="input-field">
+        </div>
 
-                            <div class="mb-3 row">
-                                <label for="txtPassword1" class="col-sm-4 col-form-label text-end">Password</label>
-                                <div class="col-sm-8">
-                                    <input type="password" class="form-control" id="txtPassword1" name="txtPassword1">
-                                </div>
-                            </div>
+        <div class="form-group">
+            <label> Password</label>
+            <input type="password" name="txtPassword1"class="input-field">
+        </div>
 
-                            <div class="mb-3 row">
-                                <label for="txtPassword2" class="col-sm-4 col-form-label text-end">Confirm password</label>
-                                <div class="col-sm-8">
-                                    <input type="password" class="form-control" id="txtPassword2" name="txtPassword2">
-                                </div>
-                            </div>
+        <div class="form-group">
+            <label> Confirm Password</label>
+            <input type="password" name="txtPassword2"class="input-field">   
+        </div>
 
-                            <div class="mb-3 row">
-                                <label class="col-sm-4 col-form-label text-end">Gender</label>
-                                <div class="col-sm-8 d-flex align-items-center">
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="gender" id="male" value="male" checked>
-                                        <label class="form-check-label" for="male">Male</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="gender" id="female" value="female">
-                                        <label class="form-check-label" for="female">Female</label>
-                                    </div>
-                                </div>
-                            </div>
+        <div class="form-group">
+            <label> Phone</label>
+            <input type="text" name="txtPhone"class="input-field">
+        </div>
 
-                            <div class="mb-3 row">
-                                <label for="txtPhone" class="col-sm-4 col-form-label text-end">Phone</label>
-                                <div class="col-sm-8">
-                                    <input type="tel" class="form-control" id="txtPhone" name="txtPhone">
-                                </div>
-                            </div>
+        <div class="form-group">
+            <label> Email</label>
+            <input type="text" name="txtEmail"class="input-field">
+        </div>
 
-                            <div class="mb-3 row">
-                                <label for="txtEmail" class="col-sm-4 col-form-label text-end">Email</label>
-                                <div class="col-sm-8">
-                                    <input type="email" class="form-control" id="txtEmail" name="txtEmail">
-                                </div>
-                            </div>
-
-                            <div class="mb-3 row">
-                                <label class="col-sm-4 col-form-label text-end">Favourite</label>
-                                <div class="col-sm-8 d-flex align-items-center">
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="chkMusic" name="chkMusic" value="music" checked>
-                                        <label class="form-check-label" for="chkMusic">Music</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="chkReading" name="chkReading" value="reading" checked>
-                                        <label class="form-check-label" for="chkReading">Reading</label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mb-3 row">
-                                <label for="filPicture" class="col-sm-4 col-form-label text-end">Picture</label>
-                                <div class="col-sm-8">
-                                    <input class="form-control" type="file" id="filPicture" name="filPicture">
-                                </div>
-                            </div>
-
-                            <div class="mb-3 row">
-                                <label for="txtDescription" class="col-sm-4 col-form-label text-end">Description</label>
-                                <div class="col-sm-8">
-                                    <textarea class="form-control" id="txtDescription" name="txtDescription" rows="5"></textarea>
-                                </div>
-                            </div>
-
-                            <div class="mb-3 row">
-                                <label for="education" class="col-sm-4 col-form-label text-end">Education level</label>
-                                <div class="col-sm-8">
-                                    <select class="form-select" id="education">
-                                        <option selected>Aptech</option>
-                                        <option>High School</option>
-                                        <option>College</option>
-                                        <option>University</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="mb-3 row">
-                                <label for="language" class="col-sm-4 col-form-label text-end">Language</label>
-                                <div class="col-sm-8">
-                                    <select class="form-select" id="language" size="4" multiple>
-                                        <option>Vietnamese</option>
-                                        <option>English</option>
-                                        <option>French</option>
-                                        <option>Japanese</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-sm-4"></div>
-                                <div class="col-sm-8">
-                                    <button type="submit" class="btn btn-secondary me-2">Register</button>
-                                    <button type="reset" class="btn btn-secondary">Reset</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+        <div class="form-group">
+                <label>Favourite:</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="chkMusic"> Music</label>
+                <label><input type="checkbox" name="chkReading"> Reading</label>
             </div>
         </div>
-    </div>
 
-    <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <div class="form-group">
+            <label> Picture</label>
+            <input type="file" name="filPicture"class="input-field">
+        </div>
+
+        <div class="form-group">
+            <label> Description</label>
+            <textarea name="txtDescription" class="input-field"></textarea>
+        </div>
+
+        <div class="form-group">        
+        <label> Education </label>
+            <select class="input-field">
+                <option value="1">High School</option>
+                <option value="2">College</option>
+                <option value="3">University</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label> Language </label>
+                <select size="4" multiple class="input-field">
+                    <option>Vietnamese</option>
+                    <option>English</option>
+                    <option>French</option>
+                    <option>Japanese</option>
+                </select>
+        </div>
+
+
+        <div class="text-center>
+            <input type="submit" value="Register">
+            <input type="reset" value="Reset">
+        </div>
+    
+
+
+    </div>
+</form> 
 </body>
 </html>
