@@ -3,47 +3,42 @@
 <head>
     <meta charset="utf-8">
     <title>Multiplication Table</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        h2 { text-align: center; }
+        .container { margin: 0 auto; max-width: 400px; }
+        .error { color: red; }
+        #result { margin-top: 10px; }
+    </style>
+
     <script>
-        function display() {
-            var a = document.f.a; // Get the input field
-            var iframe = document.getElementById("view-area"); // Get the iframe element
-            var iframeDoc = iframe.contentDocument || iframe.contentWindow.document; // Get the iframe document
-
-            // Clear old content
-            iframeDoc.body.innerHTML = "";
-
-            if (a.value.trim() === "" || isNaN(a.value)) {
-                iframeDoc.body.innerHTML = "<font color='red'>You must enter a valid number</font>";
-            } else {
-                var tableContent = "<b>Multiplication Table for " + a.value + ":</b><br/>";
-                for (var i = 1; i <= 10; i++) {
-                    tableContent += a.value + " x " + i + " = " + (i * a.value) + "<br/>";
-                }
-                iframeDoc.body.innerHTML = tableContent; // Update iframe content
+        function generateTable() {
+            const num = document.getElementById('number').value;
+            const result = document.getElementById('result');
+            
+            if (!num || isNaN(num)) {
+                result.innerHTML = "<span class='error'>Please enter a valid number</span>";
+                return;
             }
+            
+            let table = `<b>Multiplication Table for ${num}:</b><br>`;
+            for (let i = 1; i <= 10; i++) {
+                table += `${num} × ${i} = ${num * i}<br>`;
+            }
+            
+            result.innerHTML = table;
         }
     </script>
+
 </head>
 <body>
-    <form name="f">
-        <table border="0" align="center">
-            <tr>
-                <td colspan="2" align="center">
-                    <h2>MULTIPLICATION TABLE</h2>
-                </td>
-            </tr>
-            <tr>
-                <td align="right">Which multiplication table do you want to display?</td>
-                <td>
-                    <input name="a" size="5" onchange="display()" />
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" align="center">
-                    <iframe id="view-area" width="230" height="250"></iframe>
-                </td>
-            </tr>
-        </table>
-    </form>
+    <div class="container">
+        <h2>MULTIPLICATION TABLE</h2>
+        <div>
+            <label for="number">Which multiplication table do you want to display?</label>
+            <input id="number" type="number"  placeholder="Enter a number to show" oninput="generateTable()">
+        </div>
+        <div id="result"></div>
+    </div>
 </body>
 </html>
